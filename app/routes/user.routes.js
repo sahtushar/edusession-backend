@@ -14,6 +14,10 @@ module.exports = function(app) {
 
   app.get("/api/test/user", [authJwt.verifyToken], controller.userBoard);
 
+  app.post("/api/bookForm", [authJwt.verifyToken], controller.bookForm);
+
+  app.post("/api/bookedClass", [authJwt.verifyToken], controller.bookedClass);
+
   app.get(
     "/api/test/mod",
     [authJwt.verifyToken, authJwt.isModerator],
